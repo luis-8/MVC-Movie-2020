@@ -26,7 +26,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Movies/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id) // tipo que acepta valores NULL (int?)
         {
             if (id == null)
             {

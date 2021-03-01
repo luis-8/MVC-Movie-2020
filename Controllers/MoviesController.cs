@@ -49,6 +49,10 @@ namespace MvcMovie.Controllers
             return View(movieGenreVM);
         }
 
+         public async Task<IActionResult> Listar(){
+             return Json(await _context.Movie.ToListAsync());
+         }
+
         // GET: Movies/Details/5
         public async Task<IActionResult> Details(int? id) // tipo que acepta valores NULL (int?)
         {

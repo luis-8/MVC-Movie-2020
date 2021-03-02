@@ -18,9 +18,13 @@ namespace MvcMovie.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
+        [Route("")]
+        [Route("Home")]
+        [Route("Home/Index")]
+        [Route("Home/Index/{id?}")]
+        public IActionResult Index(int? id)
+        {            
+            return View(id);
         }
 
         public IActionResult Privacy()

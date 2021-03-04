@@ -22,9 +22,10 @@ namespace MvcMovie.Controllers
         [Route("Home")]
         [Route("Home/Index")]
         [Route("Home/Index/{id?}")]
-        public IActionResult Index(int? id)
+        [Route("Home/loco")]
+        public IActionResult Index()
         {            
-            return View(id);
+            return View();
         }
 
         public IActionResult Privacy()

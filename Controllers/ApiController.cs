@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
+using Microsoft.Docs.Samples;
 
 namespace MvcMovie.Controllers
 {
@@ -17,31 +18,31 @@ namespace MvcMovie.Controllers
         [HttpGet]   // GET /api/test2
         public IActionResult ListProducts()
         {
-            return View();
+            return ControllerContext.MyDisplayRouteInfo();
         }
 
         [HttpGet("{id}")]   // GET /api/test2/xyz
         public IActionResult GetProduct(string id)
         {
-        return View(id);
+        return ControllerContext.MyDisplayRouteInfo(id);
         }
 
-        [HttpGet("int/{id:int}")] // GET /api/test2/int/3 (sólo int)
+        [HttpGet("int/{id:int}")] // GET /api/test2/int/3
         public IActionResult GetIntProduct(int id)
         {
-            return View(id);
+            return ControllerContext.MyDisplayRouteInfo(id);
         }
 
         [HttpGet("int2/{id}")]  // GET /api/test2/int2/3
         public IActionResult GetInt2Product(int id)
         {
-            return View(id);
+            return ControllerContext.MyDisplayRouteInfo(id);
         }
 
-        [HttpGet("/api/{id}", Name = "Products_List")] //Nombre de ruta
+        /*[HttpGet("/products2/{id}", Name = "Products_List")] //nombre de la ruta
         public IActionResult GetProduct(int id)
         {
-            return View(id);
+            return ControllerContext.MyDisplayRouteInfo(id);
         }
 
         [Route("")]
@@ -49,8 +50,8 @@ namespace MvcMovie.Controllers
         [Route("Home/MyIndex")]
         public IActionResult MyIndex()
         {
-            return View();
-        }
-        
+            return ControllerContext.MyDisplayRouteInfo();
+        }*/
+            
     }
 }

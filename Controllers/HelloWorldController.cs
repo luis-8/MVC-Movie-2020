@@ -45,5 +45,13 @@ namespace MvcMovie.Controllers
 
             return View();
         }
+
+        [Route("bienvenido")]
+        [Route("bienvenido/{name?}")]
+        public IActionResult Otro(string? name="tino")
+        {
+            return Json(new[] { new { Id = 1, Nombre = "Dato 1"}, new { Id=2, Nombre="Dato 2"} });            
+            //return Json(new{name=name, tel="123"});
+        }
     }
 }
